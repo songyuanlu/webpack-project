@@ -22,7 +22,7 @@ const routers = [
     },
     {
         path: '*',
-        redirect: '/index'
+        redirect: '/list'
     }
 ];
 export default routers;

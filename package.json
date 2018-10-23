@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
     "build-dev": "webpack --config webpack.dev.js"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
