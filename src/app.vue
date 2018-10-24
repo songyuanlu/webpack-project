@@ -10,12 +10,17 @@
             </div>
         </div>
         <router-view></router-view>
+        <loading></loading>
     </div>
 </template>
 <script>
 import $ from "./utils/request.js";
+import loading from "./components/loading/loading.vue";
 
 export default {
+  components: {
+    loading: loading
+  },
   data() {
     return {
       cartList: 0
@@ -31,12 +36,28 @@ export default {
   },
   methods: {
     getCartList() {
-      $.ajax
-        .get("themes")
-        .then(res => {
-          this.this.$store.state.cartList;
-        })
-       
+      this.$http.get("list.json", {params: {foo: 'bar'}, headers: {'X-Custom': 'song'}}).then(
+        function(resp) {
+          console.log(resp);
+          console.log(JSON.parse(resp.bodyText));
+        },
+        function(error) {
+          console.log(error);
+        }
+      );
+      this.$http.post("auth/stock", {name: 'song', id: 111}, {params: {foo: 'bar'}, headers: {'X-Custom': 'song'}}).then(
+        function(resp) {
+          console.log(resp);
+        },
+        function(error) {
+          console.log(error);
+        }
+      );
+      // $.ajax
+      //   .get("themes")
+      //   .then(res => {
+      //     this.this.$store.state.cartList;
+      //   })
     }
   }
 };

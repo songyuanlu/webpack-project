@@ -1,14 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import Vuex from 'vuex';
 import Routers from './router';
+import ResourceHttp from './assest/http/http.js';
+
 import App from './app.vue';
 import './style.css';
 
 import product_data from './product';
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 Vue.use(Vuex);
+ResourceHttp(Vue.http);
+
 
 // 路由配置
 const RouterConfig = {
@@ -109,6 +115,10 @@ const store = new Vuex.Store({
         }
     }
 });
+
+
+
+
 
 new Vue({
     el: '#app',
