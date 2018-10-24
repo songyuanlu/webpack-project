@@ -15,42 +15,33 @@
 </template>
 <script>
 import $ from "./utils/request.js";
-// import loading from "./components/loading/loading.vue";
 
 export default {
-  // components: {
-  //   loading: loading
-  // },
   data() {
     return {
       cartList: 0
     };
   },
-  // computed: {
-  //     cartList () {
-  //         return this.$store.state.cartList;
-  //     }
-  // },
   mounted() {
     this.getCartList();
   },
   methods: {
     getCartList() {
-      this.$loading.show({
-        show: true,
-        msg: "fsa"
-      });
-      let self = this;
-      setTimeout(function() {
-        self.$loading.hide();
-        self.$loading.add();
-      }, 2000);
-      setTimeout(function() {
-        self.$loading.show({
-          show: true,
-          msg: "3333"
-        });
-      }, 5000);
+      // this.$loading.show({
+      //   show: true,
+      //   msg: "fsa"
+      // });
+      // let self = this;
+      // setTimeout(function() {
+      //   self.$loading.hide();
+      //   self.$loading.add();
+      // }, 2000);
+      // setTimeout(function() {
+      //   self.$loading.show({
+      //     show: true,
+      //     msg: "3333"
+      //   });
+      // }, 5000);
 
       this.$http
         .get("list.json", {

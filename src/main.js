@@ -1,9 +1,13 @@
 import Vue from 'vue';
+
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
-import Vuex from 'vuex';
 import Routers from './router';
-import ResourceHttp from './assest/http/http.js';
+
+import Vuex from 'vuex';
+
+import VueResource from 'vue-resource';
+import HttpInterceptor from './assest/http/interceptor.js';
+
 import Loading from "./components/loading/loading.js";
 
 import App from './app.vue';
@@ -12,10 +16,10 @@ import './style.css';
 import product_data from './product';
 
 Vue.use(VueRouter);
-Vue.use(VueResource);
 Vue.use(Vuex);
+Vue.use(VueResource);
 Vue.use(Loading);
-ResourceHttp(Vue.http);
+HttpInterceptor();
 
 
 // 路由配置
