@@ -4,6 +4,7 @@ import VueResource from 'vue-resource';
 import Vuex from 'vuex';
 import Routers from './router';
 import ResourceHttp from './assest/http/http.js';
+import Loading from "./components/loading/loading.js";
 
 import App from './app.vue';
 import './style.css';
@@ -13,6 +14,7 @@ import product_data from './product';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(Vuex);
+Vue.use(Loading);
 ResourceHttp(Vue.http);
 
 
@@ -115,8 +117,6 @@ const store = new Vuex.Store({
         }
     }
 });
-
-
 
 
 

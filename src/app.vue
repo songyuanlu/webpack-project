@@ -10,17 +10,17 @@
             </div>
         </div>
         <router-view></router-view>
-        <loading msg="来一发" duration="1"></loading>
+        <!-- <loading show="true" msg="来一发" duration="1"></loading> -->
     </div>
 </template>
 <script>
 import $ from "./utils/request.js";
-import loading from "./components/loading/loading.vue";
+// import loading from "./components/loading/loading.vue";
 
 export default {
-  components: {
-    loading: loading
-  },
+  // components: {
+  //   loading: loading
+  // },
   data() {
     return {
       cartList: 0
@@ -36,23 +36,50 @@ export default {
   },
   methods: {
     getCartList() {
-      this.$http.get("list.json", {params: {foo: 'bar'}, headers: {'X-Custom': 'song'}}).then(
-        function(resp) {
-          console.log(resp);
-          console.log(JSON.parse(resp.bodyText));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
-      this.$http.post("auth/stock", {name: 'song', id: 111}, {params: {foo: 'bar'}, headers: {'X-Custom': 'song'}}).then(
-        function(resp) {
-          console.log(resp);
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      this.$loading.show({
+        show: true,
+        msg: "fsa"
+      });
+      let self = this;
+      setTimeout(function() {
+        self.$loading.hide();
+        self.$loading.add();
+      }, 2000);
+      setTimeout(function() {
+        self.$loading.show({
+          show: true,
+          msg: "3333"
+        });
+      }, 5000);
+
+      this.$http
+        .get("list.json", {
+          params: { foo: "bar" },
+          headers: { "X-Custom": "song" }
+        })
+        .then(
+          function(resp) {
+            console.log(resp);
+            console.log(JSON.parse(resp.bodyText));
+          },
+          function(error) {
+            console.log(error);
+          }
+        );
+      this.$http
+        .post(
+          "auth/stock",
+          { name: "song", id: 111 },
+          { params: { foo: "bar" }, headers: { "X-Custom": "song" } }
+        )
+        .then(
+          function(resp) {
+            console.log(resp);
+          },
+          function(error) {
+            console.log(error);
+          }
+        );
       // $.ajax
       //   .get("themes")
       //   .then(res => {

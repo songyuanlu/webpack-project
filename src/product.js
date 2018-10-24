@@ -88,5 +88,140 @@ export default [
         sales: 9000,
         cost: 2298,
         color: '金色'
+    },
+    {
+        id: 11,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 12,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 13,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 14,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 15,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 16,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 17,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 18,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 19,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 20,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 21,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 22,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 23,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 24,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
+    },
+    {
+        id: 25,
+        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
+        brand: 'B&O',
+        image: 'http://ordfm6aah.bkt.clouddn.com/shop/10.jpeg',
+        sales: 9000,
+        cost: 2298,
+        color: '金色'
     }
 ]
