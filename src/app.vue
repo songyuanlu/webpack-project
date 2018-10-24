@@ -10,7 +10,7 @@
             </div>
         </div>
         <router-view></router-view>
-        <loading></loading>
+        <loading msg="来一发" duration="1"></loading>
     </div>
 </template>
 <script>

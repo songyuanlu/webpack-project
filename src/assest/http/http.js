@@ -3,7 +3,7 @@ const http = function ($http) {
 
   //设置请求域
   // Vue.http.options.root = 'http://127.0.0.1:8081/';
-  $http.options.root = 'http://10.2.30.73/user/';
+  $http.options.root = '';
   //如果请求是基于这个域
   //错误: this.$http.get("/list.json"），不然是基于页面域名的请求
   //正确： this.$http.get("list.json"）
