@@ -10,7 +10,12 @@ import HttpInterceptor from './assest/http/interceptor.js';
 
 import Loading from "./components/loading/loading.js";
 
+import ElementUI from 'element-ui';
+
 import App from './app.vue';
+
+// import 'element-ui/lib/theme-chalk/index.css';
+import './assest/lib/element-ui/css/index.css';
 import './style.css';
 
 import product_data from './product';
@@ -18,8 +23,10 @@ import product_data from './product';
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueResource);
-Vue.use(Loading);
 HttpInterceptor();
+Vue.use(Loading);
+Vue.use(ElementUI);
+
 
 
 // 路由配置

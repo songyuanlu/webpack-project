@@ -9,17 +9,45 @@
                 </router-link>
             </div>
         </div>
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
         <router-view></router-view>
-        <!-- <loading show="true" msg="来一发" duration="1"></loading> -->
     </div>
 </template>
 <script>
-import $ from "./utils/request.js";
-
 export default {
   data() {
     return {
-      cartList: 0
+      cartList: 0,
+      options: [
+        {
+          value: "选项1",
+          label: "黄金糕"
+        },
+        {
+          value: "选项2",
+          label: "双皮奶"
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎"
+        },
+        {
+          value: "选项4",
+          label: "龙须面"
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭"
+        }
+      ],
+      value: ""
     };
   },
   mounted() {
@@ -49,11 +77,11 @@ export default {
         })
         .then(
           function(resp) {
-            console.log('list.json -----------');
+            console.log("list.json -----------");
             console.log(resp);
           },
           function(error) {
-              console.log('list.json  error-----------');
+            console.log("list.json  error-----------");
             console.log(error);
           }
         );
@@ -65,11 +93,11 @@ export default {
         )
         .then(
           function(resp) {
-              console.log('auth/stock ------------');
+            console.log("auth/stock ------------");
             console.log(resp);
           },
           function(error) {
-              console.log('auth/stock error------------');
+            console.log("auth/stock error------------");
             console.log(error);
           }
         );

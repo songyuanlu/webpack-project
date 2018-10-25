@@ -24,8 +24,9 @@ module.exports = {
     rules: [
       {
         test: /\.(less|css)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
-        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader']
+        // exclude: /node_modules/,//如果要次参数，需要吧element-ui的样式放在src
+        // include: path.resolve(__dirname, 'src')
       },
       {
         test: /\.vue$/,
@@ -36,6 +37,17 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: ['file-loader', 'url-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     ]
   }
