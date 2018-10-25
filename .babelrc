@@ -1,0 +1,16 @@
+{
+  "plugins": [],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "ie >= 9"
+          ]
+        },
+        "useBuiltIns": true
+      }
+    ]
+  ]
+}

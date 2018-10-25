@@ -8,6 +8,7 @@ const ComLoading = new vueLoading({
 ComLoading.show = false;
 
 const $loading = {
+    amount: 0,
     show(options = {}) {
         if (ComLoading.show === 0) {
             ComLoading.msg = options.msg;
@@ -19,13 +20,13 @@ const $loading = {
     },
     hide() {
         ComLoading.show = false;
-        ComLoading.amount = 0;
+        this.amount = 0;
     },
     add() {
-        ComLoading.amount++;
+        this.amount++;
     },
     minus() {
-        ComLoading.amount--;
+        this.amount--;
     }
 }
 

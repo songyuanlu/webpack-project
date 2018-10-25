@@ -10,5 +10,13 @@ module.exports = merge(webpackCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('dev')
     })
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    // compress: true,
+    host: '0.0.0.0',
+    port: 8080,
+    //允许打开本地ip
+    useLocalIp: true
+  },
 })

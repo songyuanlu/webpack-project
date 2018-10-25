@@ -45,15 +45,15 @@ export default {
 
       this.$http
         .get("list.json", {
-          params: { foo: "bar" },
-          headers: { "X-Custom": "song" }
+          params: { foo: "bar" }
         })
         .then(
           function(resp) {
+            console.log('list.json -----------');
             console.log(resp);
-            console.log(JSON.parse(resp.bodyText));
           },
           function(error) {
+              console.log('list.json  error-----------');
             console.log(error);
           }
         );
@@ -61,13 +61,15 @@ export default {
         .post(
           "auth/stock",
           { name: "song", id: 111 },
-          { params: { foo: "bar" }, headers: { "X-Custom": "song" } }
+          { params: { foo: "bar" } }
         )
         .then(
           function(resp) {
+              console.log('auth/stock ------------');
             console.log(resp);
           },
           function(error) {
+              console.log('auth/stock error------------');
             console.log(error);
           }
         );
