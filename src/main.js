@@ -16,7 +16,9 @@ import App from '@/app.vue';
 import '@assets/lib/element-ui/css/index.css';
 import '@/style.css';
 
+import servers from '@servers';
 
+console.log(servers);
 
 Vue.use(VueRouter);
 Vue.use(Vuex);

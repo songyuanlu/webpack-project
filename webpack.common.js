@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const ClearWebpackPlugin = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+console.log('--------------------------------')
+console.log(process.env.NODE_ENV)
 
 module.exports = {
   entry: {
@@ -18,6 +20,7 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@views': path.resolve(__dirname, 'src/views'),
       '@assets': path.resolve(__dirname, 'src/assets'),
+      '@servers': path.resolve(__dirname, 'src/config/' + process.env.NODE_ENV +'.js'),
     }
     // ,extensions: ['.js', '.vue'],
     // modules: [resolve('node_modules'), resolve('src')]
