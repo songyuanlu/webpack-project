@@ -45,111 +45,112 @@
     </div>
 </template>
 <script>
-    import Product from '../components/product.vue';
-    export default {
-        components: { Product },
-        computed: {
-            list () {
-                return this.$store.state.productList;
-            },
-            brands () {
-                return this.$store.getters.brands;
-            },
-            colors () {
-                return this.$store.getters.colors;
-            },
-            filteredAndOrderedList () {
-                let list = [...this.list];
-                // 按品牌过滤
-                if (this.filterBrand !== '') {
-                    list = list.filter(item => item.brand === this.filterBrand);
-                }
-                // 按颜色过滤
-                if (this.filterColor !== '') {
-                    list = list.filter(item => item.color === this.filterColor);
-                }
-                // 排序
-                if (this.order !== '') {
-                    if (this.order === 'sales') {
-                        list = list.sort((a, b) => b.sales - a.sales);
-                    } else if (this.order === 'cost-desc') {
-                        list = list.sort((a, b) => b.cost - a.cost);
-                    } else if (this.order === 'cost-asc') {
-                        list = list.sort((a, b) => a.cost - b.cost);
-                    }
-                }
-                return list;
-            }
-        },
-        data () {
-            return {
-                filterBrand: '',
-                filterColor: '',
-                order: ''
-            }
-        },
-        methods: {
-            handleFilterBrand (brand) {
-                if (this.filterBrand === brand) {
-                    this.filterBrand = '';
-                } else {
-                    this.filterBrand = brand;
-                }
-            },
-            handleFilterColor (color) {
-                if (this.filterColor === color) {
-                    this.filterColor = '';
-                } else {
-                    this.filterColor = color;
-                }
-            },
-            handleOrderDefault () {
-                this.order = '';
-            },
-            handleOrderSales () {
-                this.order = 'sales';
-            },
-            handleOrderCost () {
-                if (this.order === 'cost-desc') {
-                    this.order = 'cost-asc';
-                } else {
-                    this.order = 'cost-desc';
-                }
-            }
-        },
-        mounted () {
-            this.$store.dispatch('getProductList');
+import Product from "../components/product.vue";
+export default {
+  components: { Product },
+  computed: {
+    list() {
+      console.log(this.$store.state.sessionId);
+      return this.$store.state.productList;
+    },
+    brands() {
+      return this.$store.getters.brands;
+    },
+    colors() {
+      return this.$store.getters.colors;
+    },
+    filteredAndOrderedList() {
+      let list = [...this.list];
+      // 按品牌过滤
+      if (this.filterBrand !== "") {
+        list = list.filter(item => item.brand === this.filterBrand);
+      }
+      // 按颜色过滤
+      if (this.filterColor !== "") {
+        list = list.filter(item => item.color === this.filterColor);
+      }
+      // 排序
+      if (this.order !== "") {
+        if (this.order === "sales") {
+          list = list.sort((a, b) => b.sales - a.sales);
+        } else if (this.order === "cost-desc") {
+          list = list.sort((a, b) => b.cost - a.cost);
+        } else if (this.order === "cost-asc") {
+          list = list.sort((a, b) => a.cost - b.cost);
         }
+      }
+      return list;
     }
+  },
+  data() {
+    return {
+      filterBrand: "",
+      filterColor: "",
+      order: ""
+    };
+  },
+  methods: {
+    handleFilterBrand(brand) {
+      if (this.filterBrand === brand) {
+        this.filterBrand = "";
+      } else {
+        this.filterBrand = brand;
+      }
+    },
+    handleFilterColor(color) {
+      if (this.filterColor === color) {
+        this.filterColor = "";
+      } else {
+        this.filterColor = color;
+      }
+    },
+    handleOrderDefault() {
+      this.order = "";
+    },
+    handleOrderSales() {
+      this.order = "sales";
+    },
+    handleOrderCost() {
+      if (this.order === "cost-desc") {
+        this.order = "cost-asc";
+      } else {
+        this.order = "cost-desc";
+      }
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getProductList");
+  }
+};
 </script>
 <style scoped>
-    .list-control{
-        background: #fff;
-        border-radius: 6px;
-        margin: 16px;
-        padding: 16px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.2);
-    }
-    .list-control-filter{
-        margin-bottom: 16px;
-    }
-    .list-control-filter-item,
-    .list-control-order-item {
-        cursor: pointer;
-        display: inline-block;
-        border: 1px solid #e9eaec;
-        border-radius: 4px;
-        margin-right: 6px;
-        padding: 2px 6px;
-    }
-    .list-control-filter-item.on,
-    .list-control-order-item.on{
-        background: #f2352e;
-        border: 1px solid #f2352e;
-        color: #fff;
-    }
-    .product-not-found{
-        text-align: center;
-        padding: 32px;
-    }
+.list-control {
+  background: #fff;
+  border-radius: 6px;
+  margin: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.list-control-filter {
+  margin-bottom: 16px;
+}
+.list-control-filter-item,
+.list-control-order-item {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #e9eaec;
+  border-radius: 4px;
+  margin-right: 6px;
+  padding: 2px 6px;
+}
+.list-control-filter-item.on,
+.list-control-order-item.on {
+  background: #f2352e;
+  border: 1px solid #f2352e;
+  color: #fff;
+}
+.product-not-found {
+  text-align: center;
+  padding: 32px;
+}
 </style>

@@ -12,6 +12,16 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@views': path.resolve(__dirname, 'src/views'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    }
+    // ,extensions: ['.js', '.vue'],
+    // modules: [resolve('node_modules'), resolve('src')]
+  },
   plugins: [
     new ClearWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
