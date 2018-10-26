@@ -9,6 +9,8 @@ import Store from '@assets/tool/store.js'
 import HttpInterceptor from '@assets/http/interceptor.js';
 import Loading from "@components/loading/loading.js";
 
+import servers from '@servers';
+
 
 import App from '@/app.vue';
 
@@ -16,17 +18,13 @@ import App from '@/app.vue';
 import '@assets/lib/element-ui/css/index.css';
 import '@/style.css';
 
-import servers from '@servers';
-
-console.log(servers);
-
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueResource);
 HttpInterceptor();
 Vue.use(Loading);
 Vue.use(ElementUI);
-
+Vue.use(servers);
 
 
 // 路由配置

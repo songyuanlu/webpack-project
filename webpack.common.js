@@ -20,7 +20,8 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@views': path.resolve(__dirname, 'src/views'),
       '@assets': path.resolve(__dirname, 'src/assets'),
-      '@servers': path.resolve(__dirname, 'src/config/' + process.env.NODE_ENV +'.js'),
+      '@configs': path.resolve(__dirname, 'src/configs'),
+      '@servers': path.resolve(__dirname, 'src/configs/' + process.env.NODE_ENV +'.js'),
     }
     // ,extensions: ['.js', '.vue'],
     // modules: [resolve('node_modules'), resolve('src')]

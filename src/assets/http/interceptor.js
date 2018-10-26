@@ -1,9 +1,10 @@
 import Vue from 'vue';
 
-export default function () {
+const Http = function () {
 
   /** http 设置全局配置 **/
-  // Vue.http.options.root = 'http://127.0.0.1:8081/';
+  Vue.http.options.root = 'http://127.2.22.2:8080/';
+  
 
   //请求发送前的处理逻辑
   Vue.http.interceptors.push(function (request, next) {
@@ -82,6 +83,9 @@ export default function () {
 
 }
 
+
+
+export default Http
 
 
 /** 请求拦截demo ******/

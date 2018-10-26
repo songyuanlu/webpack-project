@@ -70,9 +70,10 @@ export default {
       //     msg: "3333"
       //   });
       // }, 5000);
-
+      console.log('this.$servers')
+      console.log(this.$servers)
       this.$http
-        .get("list.json", {
+        .get(this.$servers.getUrl('user/login'), {
           params: { foo: "bar" }
         })
         .then(
@@ -86,8 +87,7 @@ export default {
           }
         );
       this.$http
-        .post(
-          "auth/stock",
+        .post(this.$servers.getUrl('tarde/home'),
           { name: "song", id: 111 },
           { params: { foo: "bar" } }
         )
