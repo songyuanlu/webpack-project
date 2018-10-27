@@ -19,6 +19,7 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@views': path.resolve(__dirname, 'src/views'),
       '@assets': path.resolve(__dirname, 'src/assets'),
+      '@store': path.resolve(__dirname, 'src/store'),
       '@configs': path.resolve(__dirname, 'configs'),
       '@servers': path.resolve(__dirname, 'configs/' + process.env.NODE_ENV +'.js'),
       '@datas': path.resolve(__dirname, 'datas'),
@@ -56,7 +57,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        // use: ['babel-loader']
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,

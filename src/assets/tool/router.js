@@ -1,28 +1,66 @@
 const routers = [
   {
-    path: '/list',
+    path: '/login',
     meta: {
-      title: '商品列表'
+      title: '登录'
     },
-    component: (resolve) => require(['@views/list.vue'], resolve)
+    component: (resolve) => require(['@views/login.vue'], resolve)
   },
   {
-    path: '/product/:id',
+    path: '/',
     meta: {
-      title: '商品详情'
+      title: '主页'
     },
-    component: (resolve) => require(['@views/product.vue'], resolve)
+    component: (resolve) => require(['@views/home.vue'], resolve),
+    redirect: '/index',
+    children: [
+      {
+        path: 'index',
+        component: (resolve) => require(['@views/index.vue'], resolve),
+        meta: {
+          title: "主页"
+        }
+      },
+      {
+        path: 'manager',
+        component: (resolve) => require(['@views/manager.vue'], resolve),
+        meta: {
+          title: "应用"
+        }
+      },
+      {
+        path: 'video',
+        component: (resolve) => require(['@views/video.vue'], resolve),
+        meta: {
+          title: "视频"
+        }
+      },
+    ]
   },
-  {
-    path: '/cart',
-    meta: {
-      title: '购物车'
-    },
-    component: (resolve) => require(['@views/cart.vue'], resolve)
-  },
+  // {
+  //   path: '/index',
+  //   meta: {
+  //     title: '首页'
+  //   },
+  //   component: (resolve) => require(['@views/index.vue'], resolve)
+  // },
+  // {
+  //   path: '/manager',
+  //   meta: {
+  //     title: '用具管理'
+  //   },
+  //   component: (resolve) => require(['@views/manager.vue'], resolve)
+  // },
+  // {
+  //   path: '/video',
+  //   meta: {
+  //     title: '视频管理'
+  //   },
+  //   component: (resolve) => require(['@views/video.vue'], resolve)
+  // },
   {
     path: '*',
-    redirect: '/list'
+    redirect: '/index'
   }
 ];
 export default routers;

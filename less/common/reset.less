@@ -2,6 +2,19 @@
     margin: 0;
     padding: 0;
 }
+
+.clear {
+    zoom: 1;
+}
+.clear:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
 body{
     background-color: @bg-body;
 }

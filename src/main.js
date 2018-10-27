@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Vuex from 'vuex';
+// import Vuex from 'vuex';
 import VueResource from 'vue-resource';
 import ElementUI from 'element-ui';
 
-import Routers from '@assets/tool/router'
-import Store from '@assets/tool/store.js'
+
+
+import Routers from '@assets/tool/router';
+import store from '@store';
+// import Store from '@assets/tool/store.js'
 import HttpInterceptor from '@assets/http/interceptor.js';
 import Loading from "@components/loading/loading.js";
 
@@ -16,11 +19,10 @@ import App from '@/app.vue';
 
 // import 'element-ui/lib/theme-chalk/index.css';
 import '@assets/lib/element-ui/css/index.css';
-import '@/style.css';
 import '@less/style.less';
 
 Vue.use(VueRouter);
-Vue.use(Vuex);
+// Vue.use(Vuex);
 Vue.use(VueResource);
 HttpInterceptor();
 Vue.use(Loading);
@@ -48,7 +50,7 @@ router.afterEach((to, from, next) => {
 });
 
 
-const store = new Vuex.Store(Store);
+// const store = new Vuex.Store(Store);
 
 new Vue({
     el: '#app',
