@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "cross-env NODE_ENV=dev webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
     "build:dev": "cross-env NODE_ENV=dev webpack --config webpack.dev.js",
-    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack.prod.js"
+    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack.prod.js",
+    "start:static": "cross-env NODE_ENV=static webpack-dev-server --open webpack --config webpack.static.js"
   },
   "repository": {
     "type": "git",
