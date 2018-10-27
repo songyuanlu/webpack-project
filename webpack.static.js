@@ -10,6 +10,7 @@ const srcDir = path.resolve(__dirname, './static');
 const distDir = path.resolve(__dirname, './dist');
 
 const plugins = [new ClearWebpackPlugin(['dist'])];
+plugins.push(new VueLoaderPlugin())
 //获取多页面的每个入口文件，用于配置中的entry
 function getEntry() {
     let files = glob.sync(srcDir+'/**/*.html'),
@@ -31,7 +32,7 @@ function getEntry() {
             // 生成出来的html文件名
             filename: distDir + outputHtmlName + '.html',
             // 自动将引用插入body
-            inject: 'body',
+            inject: 'head',
             // title: outputHtmlName,
             // 每个html引用的js模块，也可以在这里加上vendor等公用模块
             // chunks: [entryFileName]
@@ -39,10 +40,12 @@ function getEntry() {
     }
 }
 getEntry();
-plugins.push(new VueLoaderPlugin())
+
+
 
 module.exports = {
   entry: {
+    vue: './static/vue.min.js',
     main: './static/main.js'
   },
   output: {
@@ -52,7 +55,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'static'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@views': path.resolve(__dirname, 'src/views'),
       '@assets': path.resolve(__dirname, 'src/assets'),
@@ -81,7 +84,7 @@ module.exports = {
       {
         test: /\.vue$/,
         use: ['vue-loader'],
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'static'),
       },
       {
         test: /\.js$/,

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ch">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
-    inde.html <br>
+    <a href="page1/page1.html"></a>
+    <a href="page2/page2.html"></a>
+    <div id="app">
+        <p>{{ input }}</p>
+    </div>
+    
+    <script src="vue.bundle.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                input: '111'
+            }
+        })
+    </script>
 </body>
+
 </html>
