@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-    import product_data from '../product.js';
+    import product_data from '@datas/product.js';
     export default {
         data () {
             return {

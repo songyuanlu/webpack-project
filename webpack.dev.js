@@ -8,7 +8,7 @@ module.exports = merge(webpackCommon, {
   devtool: 'inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('dev')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
   devServer: {

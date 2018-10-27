@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:prod": "cross-env NODE_ENV=prod webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
-    "build:dev": "webpack --config webpack.dev.js"
+    "start:dev": "cross-env NODE_ENV=dev webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
+    "build:dev": "cross-env NODE_ENV=dev webpack --config webpack.dev.js",
+    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",

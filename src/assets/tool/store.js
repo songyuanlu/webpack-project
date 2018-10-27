@@ -1,4 +1,4 @@
-import product_data from '@/product.js';
+import product_data from '@datas/product.js';
 
 // 数组排重
 function getFilterArray(array) {

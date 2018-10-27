@@ -17,6 +17,7 @@ import App from '@/app.vue';
 // import 'element-ui/lib/theme-chalk/index.css';
 import '@assets/lib/element-ui/css/index.css';
 import '@/style.css';
+import '@less/style.less';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -26,6 +27,8 @@ Vue.use(Loading);
 Vue.use(ElementUI);
 Vue.use(servers);
 
+console.log('process.env.NODE_ENV')
+console.log(process.env.NODE_ENV)
 
 // 路由配置
 const RouterConfig = {
