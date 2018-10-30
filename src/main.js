@@ -21,6 +21,7 @@ import App from '@/app.vue';
 import '@assets/lib/element-ui/css/index.css';
 import '@less/style.less';
 
+
 Vue.use(VueRouter);
 // Vue.use(Vuex);
 Vue.use(VueResource);

@@ -11,6 +11,9 @@
                 <el-button type="primary" @click="login('loginForm')">loginForm</el-button>
             </el-form-item>
         </el-form>
+        <div class="a">sfdasf
+          <p class="b">fdasfdsa</p>
+        </div>
     </div>
 </template>
 <script>
@@ -65,3 +68,14 @@ export default {
 };
 </script>
 
+
+<style lang="less">
+// @import '../../less/themes/var.less';
+
+.a{
+  color: red;
+  .b{
+    color: @c-0;
+  }
+}
+</style>

@@ -21,7 +21,7 @@ module.exports = {
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@store': path.resolve(__dirname, 'src/store'),
       '@configs': path.resolve(__dirname, 'configs'),
-      '@servers': path.resolve(__dirname, 'configs/' + process.env.NODE_ENV +'.js'),
+      '@servers': path.resolve(__dirname, 'configs/' + process.env.NODE_ENV + '.js'),
       '@datas': path.resolve(__dirname, 'datas'),
       '@less': path.resolve(__dirname, 'less'),
     }
@@ -46,8 +46,32 @@ module.exports = {
       },
       {
         test: /\.(less)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
-        exclude: /node_modules/
+        // use: ['style-loader', 'css-loader', 'less-loader'],
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.resolve(__dirname, 'less/themes/var.less')
+              ]
+            }
+          }
+        ],
+        exclude: /node_modules/,
+        // options: {
+        //   resources: [
+        //     path.resolve(__dirname, 'less/themes/var.less'),
+        //   ]
+        // }
       },
       {
         test: /\.vue$/,
