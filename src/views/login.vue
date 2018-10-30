@@ -11,6 +11,7 @@
                 <el-button type="primary" @click="login('loginForm')">loginForm</el-button>
             </el-form-item>
         </el-form>
+        <div class="test-box"> fdasfdazzzz</div>
         <div class="a">sfdasf
           <p class="b">fdasfdsa</p>
         </div>
@@ -74,6 +75,7 @@ export default {
 
 .a{
   color: red;
+      display: flex;
   .b{
     color: @c-0;
   }

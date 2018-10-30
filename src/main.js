@@ -20,6 +20,7 @@ import App from '@/app.vue';
 // import 'element-ui/lib/theme-chalk/index.css';
 import '@assets/lib/element-ui/css/index.css';
 import '@less/style.less';
+import '@/style.css'
 
 
 Vue.use(VueRouter);

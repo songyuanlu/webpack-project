@@ -40,8 +40,42 @@ module.exports = {
     rules: [
       {
         test: /\.(css)$/,
-        use: ['style-loader', 'css-loader']
-        // exclude: /node_modules/,//如果要次参数，需要吧element-ui的样式放在src
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },  //1代表css-loader后还需要几个loader
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require("autoprefixer")({
+                  "browsers": [
+                    "defaults",
+                    "not ie < 11",
+                    "last 2 versions",
+                    "> 1%",
+                    "iOS 7",
+                    "last 3 iOS versions"
+                  ]
+                })]
+            }
+          },
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     config: {
+          //       path: 'postcss.config.js',
+          //       ctx: {
+          //         cssnext: { ...options },
+          //         cssnano: { ...options },
+          //         autoprefixer: { ...options }
+          //       }
+          //     }
+          //   }
+          // },
+        ]
         // include: path.resolve(__dirname, 'src')
       },
       {
@@ -52,7 +86,25 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: { importLoaders: 3 }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require("autoprefixer")({
+                  "browsers": [
+                    "defaults",
+                    "not ie < 11",
+                    "last 2 versions",
+                    "> 1%",
+                    "iOS 7",
+                    "last 3 iOS versions"
+                  ]
+                })
+              ]
+            }
           },
           {
             loader: 'less-loader'
